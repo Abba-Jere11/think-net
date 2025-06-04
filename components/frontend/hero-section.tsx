@@ -27,7 +27,7 @@ export default function NotFound() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center pt-4">
           <Button 
             size="lg" 
-            className="rounded-full inline-flex items-center gap-2 px-6 py-3 bg-red-500 text-white rounded-full font-medium hover:bg-red-450 transition-colors"
+            className="rounded-full inline-flex items-center gap-2 px-6 py-3 text-white rounded-full font-medium"
           >
             Try for free
             <ArrowRight className="w-4 h-4" />

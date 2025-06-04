@@ -5,19 +5,16 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const carouselItems = [
   {
-    image: "/images/signup.webp",
-    title: "Join Our Network,",
-    subtitle: "Transform Healthcare",
+    image: "thinkgg.png",
+    
   },
   {
-    image: "/images/doctor.webp",
-    title: "Empower Patients,",
-    subtitle: "Anytime, Anywhere",
+    image: "thinkp.png",
+    
   },
   {
-    image: "/images/hero.webp",
-    title: "Advance Your Practice,",
-    subtitle: "With Telemedicine",
+    image: "thinka.png",
+    
   },
 ];
 
@@ -35,17 +32,17 @@ export default function CustomCarousel() {
   };
 
   useEffect(() => {
-    const timer = setInterval(nextSlide, 5000);
+    const timer = setInterval(nextSlide, 3500);
     return () => clearInterval(timer);
   }, []);
 
   return (
-    <div className="relative w-full h-screen bg-purple-900 rounded-l-lg overflow-hidden">
+    <div className="relative w-full h-screen bg-white rounded-l-lg overflow-hidden">
       <div className="absolute inset-0">
         {carouselItems.map((item, index) => (
           <div
             key={index}
-            className={`absolute inset-0 transition-opacity duration-1000 ${
+            className={`absolute inset-0 transition-opacity duration-500 ${
               index === currentSlide ? "opacity-100" : "opacity-0"
             }`}
           >
@@ -54,7 +51,7 @@ export default function CustomCarousel() {
               alt={`Slide ${index + 1}`}
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 bg-purple-900/50" />
+            <div className="absolute inset-0 " />
           </div>
         ))}
       </div>
@@ -75,20 +72,20 @@ export default function CustomCarousel() {
           ))}
         </div>
       </div>
-      <button
+      {/* <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/75 hover:text-white transition-colors "
+        className="absolute left-4 top-1/2 transform -translate-y-1/2 text-black/75 hover:text-red transition-colors "
         aria-label="Previous slide"
       >
         <ChevronLeft className="w-8 h-8" />
       </button>
       <button
         onClick={nextSlide}
-        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/75 hover:text-white transition-colors"
+        className="absolute right-4 top-1/2 transform -translate-y-1/2 text-black/75 hover:text-red transition-colors"
         aria-label="Next slide"
       >
         <ChevronRight className="w-8 h-8" />
-      </button>
+      </button> */}
     </div>
   );
 }

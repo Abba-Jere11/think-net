@@ -34,6 +34,7 @@ import {
 } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { ChevronDown } from "lucide-react";
+import Logo from "@/components/logo";
 
 const features = [
   { 
@@ -86,7 +87,7 @@ const features = [
   }
 ];
 
-import Logo from '@/components/logo';
+;
 
 export default function SiteHeader() {
   const [open, setOpen] = React.useState(false);
@@ -96,7 +97,9 @@ export default function SiteHeader() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
         <div className="container max-w-6xl mx-auto flex h-14 items-center justify-between">
           <div className="flex items-center space-x-4">
+
             <Logo/>
+            
 
             <NavigationMenu className="hidden md:flex">
               <NavigationMenuList>

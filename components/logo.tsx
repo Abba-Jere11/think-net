@@ -1,35 +1,46 @@
 import Image from "next/image"
-import Link from "next/link"
-import React from "react"
+import { cn } from "@/lib/utils"
 
-const sizeClasses = {
-    sm: 'w-6 h-6',
-    md: 'w-8 h-8',
-    lg: 'w-10 h-10',
-  };
-  
-  const textSizeClasses = {
-    sm: 'text-sm',
-    md: 'text-base',
-    lg: 'text-lg',
-  };
-  
-  interface LogoProps {
-    className?: string;
-    size?: 'sm' | 'md' | 'lg';
-    showText?: boolean;
-  }
-  
-  export default function Logo({ className = '', size = 'md', showText = true }: LogoProps) {
+interface LogoProps {
+  width?: number
+  height?: number
+  className?: string
+  priority?: boolean
+  responsive?: boolean
+}
+
+export default function Logo({ 
+  width = 220, 
+  height = 80, 
+  className, 
+  priority = true,
+  responsive = false 
+}: LogoProps) {
+  if (responsive) {
     return (
-      <Link href="/" className={`flex items-center space-x-3 ${className}`}>
+      <div className={cn("relative", className)}>
         <Image
           src="/thinkg.png"
-          alt="Think-Lab Group"
-          width={90}
-          height={40}
-          className={sizeClasses[size]}
+          alt="Think-Lab Group - Innovation, Development, Finance"
+          width={width}
+          height={height}
+          priority={priority}
+          className="w-auto h-8 sm:h-10 md:h-12 lg:h-16 object-contain"
         />
-      </Link>
-    );
+      </div>
+    )
   }
+
+  return (
+    <div className={cn("", className)}>
+      <Image
+        src="/thinkg.png"
+        alt="Think-Lab Group - Innovation, Development, Finance"
+        width={width}
+        height={height}
+        priority={priority}
+        className="object-contain"
+      />
+    </div>
+  )
+}

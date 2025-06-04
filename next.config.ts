@@ -1,13 +1,11 @@
+import { webpack } from "next/dist/compiled/webpack/webpack";
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  turbo: {
-    rules: {
-      '*.md': {
-        loaders: ['ignore-loader'],
-        as: '*.js',
-      },
-    },
+  experimental:{
+    turbo:false,
   },
-};
+ 
+}
 
-module.exports = nextConfig;
+export default nextConfig;
