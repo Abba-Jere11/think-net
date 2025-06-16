@@ -100,27 +100,27 @@ export default function AppSidebar() {
         items: [
           {
             title: "Employee Directory",
-            url: "/staff/directory",
+            url: "/dashboard/staff",
           },
           {
             title: "Onboarding",
-            url: "/staff/onboarding",
+            url: "/dashboard/staff/onboarding",
           },
           {
             title: "Attendance & Time",
-            url: "/staff/attendance",
+            url: "/dashboard/staff/attendance",
           },
           {
             title: "Performance Reviews",
-            url: "/staff/performance",
+            url: "/dashboard/staff/performance",
           },
           {
             title: "Training & Development",
-            url: "/staff/training",
+            url: "/dashboard/staff/training",
           },
           {
             title: "Payroll",
-            url: "/staff/payroll",
+            url: "/dashboard/staff/payroll",
           },
         ],
       },
