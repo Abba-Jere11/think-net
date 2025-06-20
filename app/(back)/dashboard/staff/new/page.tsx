@@ -1,6 +1,6 @@
 import { Users, UserPlus } from "lucide-react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Card,} from "@/components/ui/card"
 import SingleStudent from "@/components/dashboard/forms/students/single-student"
 import BulkStudent from "@/components/dashboard/forms/students/bulk-student-form"
 

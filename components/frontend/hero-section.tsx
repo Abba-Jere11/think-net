@@ -1,7 +1,7 @@
-import { ArrowRight, Building2 } from "lucide-react";
-import Link from "next/link";
+import { ArrowRight,  } from "lucide-react";
+
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
+
 import SmallTitle from "./small-title";
 
 export default function NotFound() {

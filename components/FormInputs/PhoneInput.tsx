@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import React, { useState } from "react";
+import React, {  } from "react";
 import {
   Tooltip,
   TooltipContent,
@@ -7,7 +7,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { CircleHelp, Mail } from "lucide-react";
+import { CircleHelp,  } from "lucide-react";
 type TextInputProps = {
   register: any;
   errors: any;

@@ -11,29 +11,20 @@ import {
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-  SheetTrigger,
-} from "@/components/ui/sheet";
+
 import {
   Users,
   Briefcase,
   MessageSquare,
   DollarSign,
   ClipboardList,
-  Bus,
+  
   BarChart2,
-  BookOpen,
-  CalendarDays,
-  FileText,
+  
   Bell,
   Shield,
 } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { ChevronDown } from "lucide-react";
+
 import Logo from "@/components/logo";
 
 const features = [
@@ -90,8 +81,7 @@ const features = [
 ;
 
 export default function SiteHeader() {
-  const [open, setOpen] = React.useState(false);
-  const [showFeatures, setShowFeatures] = React.useState(false);
+  
 
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">

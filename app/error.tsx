@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { Home, ArrowLeft, AlertTriangle } from "lucide-react"
 
 export default function Error({
-  error,
   reset,
 }: {
   error: Error & { digest?: string }

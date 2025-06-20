@@ -3,7 +3,7 @@ import {Rethink_Sans } from "next/font/google";
 import { NextSSRPlugin } from "@uploadthing/react/next-ssr-plugin";
 import { extractRouterConfig } from "uploadthing/server";
 // import { ourFileRouter } from "~/app/api/uploadthing/core";
-import { Toaster, toast } from 'react-hot-toast';
+import { Toaster} from 'react-hot-toast';
 const Inter = Rethink_Sans({
   subsets: ["latin"],
   display:"swap",

@@ -7,12 +7,12 @@ import {
     DropdownMenuItem,
     DropdownMenuLabel,
     DropdownMenuSeparator,
-    DropdownMenuShortcut,
+    
     DropdownMenuTrigger,
   } from "@/components/ui/dropdown-menu";
 import { Input } from '@/components/ui/input';
 import { SidebarFooter, SidebarMenu, SidebarMenuButton, SidebarMenuItem, SidebarTrigger } from '@/components/ui/sidebar';
-import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogOut, Plus, Sparkles, Sun } from 'lucide-react';
+import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogOut, Plus, Sparkles,  } from 'lucide-react';
 import React from 'react';
 
 export default function SidebarHeader() {

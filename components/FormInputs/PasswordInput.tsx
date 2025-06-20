@@ -7,39 +7,48 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-import { CircleHelp, Eye, EyeOff, Mail } from "lucide-react";
+import { UseFormRegister, FieldErrors } from "react-hook-form";
+import { CircleHelp, Eye, EyeOff } from "lucide-react";
 import Link from "next/link";
+import { ComponentType } from "react";
+
+// Simple interface that works with any form
+interface FormData {
+  [key: string]: any;
+}
+
 type TextInputProps = {
-  register: any;
-  errors: any;
+  register: UseFormRegister<any>;
+  errors: FieldErrors<any>;
   label: string;
   type?: string;
   name: string;
   toolTipText?: string;
   placeholder?: string;
   forgotPasswordLink?: string;
-  icon?: any;
+  icon?: ComponentType<any>;
 };
+
 export default function PasswordInput({
   register,
   errors,
   label,
-  type = "text",
+  type = "password",
   name,
   toolTipText,
   icon,
   placeholder,
   forgotPasswordLink,
 }: TextInputProps) {
-  const Icon = icon;
+  
   const [passType, setPassType] = useState(type);
+  
   return (
     <div>
       <div className="flex space-x-2 items-center">
         <div className="flex items-center justify-between w-full">
           <label
-            htmlFor="password"
+            htmlFor={name}
             className="block text-sm font-medium leading-6 text-gray-900"
           >
             {label}
@@ -59,7 +68,7 @@ export default function PasswordInput({
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger asChild>
-                <button>
+                <button type="button">
                   <CircleHelp className="w-4 h-4 text-slate-500" />
                 </button>
               </TooltipTrigger>
@@ -71,17 +80,17 @@ export default function PasswordInput({
         )}
       </div>
       <div className="mt-2">
-        <div className="relative rounded-md ">
+        <div className="relative rounded-md">
           {icon && (
             <div className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3">
-              <Icon className="text-slate-300 w-4 h-4" />
+              {React.createElement(icon, { className: "text-slate-300 w-4 h-4" })}
             </div>
           )}
           <input
             id={name}
             type={passType}
             {...register(name, {
-              required: true,
+              required: "Password is required",
               minLength: {
                 value: 8,
                 message: "Password must be at least 8 characters",
@@ -91,12 +100,11 @@ export default function PasswordInput({
                 message:
                   "Password must contain at least one uppercase letter, one lowercase letter, one number, and one special character",
               },
-              // setValueAs: (value: string) =>
-              //   value === "" ? generatedPassword : value,
             })}
             className={cn(
-              "block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6 text-sm",
-              (errors[name] && "focus:ring-red-500 pl-8") || (icon && "pl-8")
+              "block w-full rounded-md border-0 py-2 px-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-primary sm:text-sm sm:leading-6",
+              errors[name] && "focus:ring-red-500",
+              icon && "pl-10"
             )}
             placeholder={placeholder || label}
           />
@@ -115,7 +123,9 @@ export default function PasswordInput({
           </button>
         </div>
         {errors[name] && (
-          <span className="text-xs text-red-600">{errors[name].message}</span>
+          <span className="text-xs text-red-600">
+            {String(errors[name]?.message)}
+          </span>
         )}
       </div>
     </div>

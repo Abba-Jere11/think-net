@@ -1,7 +1,7 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { UploadButton } from "@/lib/uploadthing";
-import { Plus, Upload, Image as ImageIcon, Trash2 } from "lucide-react";
+import { Upload, Image as ImageIcon, Trash2 } from "lucide-react";
 import Image from "next/image";
 import React from "react";
 import { cn } from "@/lib/utils";
@@ -9,8 +9,8 @@ import { cn } from "@/lib/utils";
 type ImageInputProps = {
   title: string;
   imageUrl: string;
-  setImageUrl: any;
-  endpoint: any;
+  setImageUrl: (url: string) => void;
+  endpoint: "imageUploader" | "staffImage";
   className?: string;
 };
 

@@ -1,8 +1,8 @@
 "use client";
-import Link from "next/link";
+
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+
 import CustomCarousel from "@/components/frontend/custom-carousel";
 import TextInput from "@/components/FormInputs/TextInput";
 import SubmitButton from "@/components/FormInputs/SubmitButton";
@@ -18,14 +18,14 @@ export type RegisterInputProps = {
   phone: string;
 };
 export default function Login() {
-  const [isLoading, setIsLoading] = useState(false);
+  const [isLoading, ] = useState(false);
   const {
     register,
     handleSubmit,
-    reset,
+ 
     formState: { errors },
   } = useForm<RegisterInputProps>();
-  const router = useRouter();
+  
   async function onSubmit(data: RegisterInputProps) {
     console.log(data);
   }

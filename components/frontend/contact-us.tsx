@@ -23,11 +23,10 @@ export type RegisterInputProps = {
 }
 
 const ContactUs: React.FC = () => {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, ] = useState(false)
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm<RegisterInputProps>()
 

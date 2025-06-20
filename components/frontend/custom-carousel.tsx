@@ -1,22 +1,26 @@
 "use client";
 import { useState, useEffect } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+
 
 
 const carouselItems = [
   {
     image: "thinkgg.png",
-    
+    title: "Think Global",
+    subtitle: "Innovate with confidence",
   },
   {
     image: "thinkp.png",
-    
+    title: "Think Projects",
+    subtitle: "Transforming ideas into solutions",
   },
   {
     image: "thinka.png",
-    
+    title: "Think Ahead",
+    subtitle: "Lead the future with tech",
   },
 ];
+
 
 export default function CustomCarousel() {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -25,11 +29,11 @@ export default function CustomCarousel() {
     setCurrentSlide((prev) => (prev + 1) % carouselItems.length);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide(
-      (prev) => (prev - 1 + carouselItems.length) % carouselItems.length
-    );
-  };
+  // const prevSlide = () => {
+  //   setCurrentSlide(
+  //     (prev) => (prev - 1 + carouselItems.length) % carouselItems.length
+  //   );
+  // };
 
   useEffect(() => {
     const timer = setInterval(nextSlide, 3500);
