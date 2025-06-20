@@ -1,14 +1,4 @@
 import React from 'react';
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuGroup,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuShortcut,
-    DropdownMenuTrigger,
-  } from "@/components/ui/dropdown-menu";
   import {
     ArrowRight,
     AudioWaveform,
@@ -103,8 +93,8 @@ export default function AppSidebar() {
             url: "/dashboard/staff",
           },
           {
-            title: "Onboarding",
-            url: "/dashboard/staff/onboarding",
+            title: "Departments",
+            url: "/dashboard/departments",
           },
           {
             title: "Attendance & Time",

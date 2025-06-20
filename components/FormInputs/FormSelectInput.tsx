@@ -1,25 +1,36 @@
 "use client";
 import AddNewButton from "@/components/FormInputs/AddNewButton";
-import React, { useState } from "react";
-import Select from "react-tailwindcss-select";
-import { Option, Options } from "react-tailwindcss-select/dist/components/type";
-type FormSelectInputProps = {
-  options: Options;
+import React from "react";
+
+export type SelectOptionProps = {
   label: string;
-  option: Option;
-  setOption: any;
+  value: string;
+};
+
+type FormSelectInputProps = {
+  options: SelectOptionProps[];
+  label: string;
+  value?: string;
+  onChange?: (value: string) => void;
   href?: string;
   labelShown?: boolean;
   toolTipText?: string;
+  placeholder?: string;
+  className?: string;
+  isSearchable?:boolean;
 };
+
 export default function FormSelectInput({
   options,
   label,
-  option,
-  setOption,
+  value,
+  onChange,
   href,
   toolTipText,
   labelShown = true,
+  placeholder,
+  className = "",
+  isSearchable=true,
 }: FormSelectInputProps) {
   return (
     <div className="">
@@ -29,14 +40,20 @@ export default function FormSelectInput({
         </h2>
       )}
       <div className="flex items-center space-x-2">
-        <Select
-          isSearchable
-          primaryColor="blue"
-          value={option}
-          onChange={(item) => setOption(item)}
-          options={options}
-          placeholder={label}
-        />
+        <select
+          
+          value={value || ""}
+          onChange={(e) => onChange?.(e.target.value)}
+          className={`flex-1 px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:border-red-500 bg-white ${className}`}
+        >
+          <option value="">{placeholder || `Select ${label}`}</option>
+          {options.map((option) => (
+            <option key={option.value} value={option.value}>
+              {option.label}
+            </option>
+          ))}
+        </select>
+        
         {href && toolTipText && (
           <AddNewButton toolTipText={toolTipText} href={href} />
         )}
