@@ -98,7 +98,7 @@ const departmentsData = [
     staff: [
       {
         id: 9,
-        name: "Alex Rodriguez",
+        name: "umar Rodriguez",
         role: "IT Director",
         email: "alex.r@thinklab.com",
         phone: "+1-555-0201",
@@ -474,9 +474,9 @@ export default function DepartmentsPage() {
                     : "hover:bg-gray-50 border-gray-200"
                 }`}
                 onClick={() => {
-                  setSelectedDepartment(department)
-                  setShowDepartmentsList(false) // Hide departments list on mobile after selection
-                }}
+  setSelectedDepartment(department)
+  setShowDepartmentsList(false) // Hide departments list on mobile after selection
+}}
               >
                 <CardContent className="p-4">
                   <div className="flex items-start justify-between">

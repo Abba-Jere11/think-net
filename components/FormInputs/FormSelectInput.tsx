@@ -30,6 +30,7 @@ export default function FormSelectInput({
   labelShown = true,
   placeholder,
   className = "",
+  isSearchable=true,
 }: FormSelectInputProps) {
   return (
     <div className="">

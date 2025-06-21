@@ -16,9 +16,9 @@ import { MdTextSnippet } from "react-icons/md"; // For .txt files
 type MultipleImageInputProps = {
   label: string;
   files: FileProps[];
-  setFiles: (files: FileProps[]) => void;
+  setFiles: any;
   className?: string;
-  endpoint?: "imageUploader" | "staffImage";
+  endpoint?: any;
 };
 export type FileProps = {
   title: string;
@@ -69,9 +69,9 @@ export default function MultipleFileUpload({
   files,
   setFiles,
   className = "col-span-full",
-  endpoint = "staffImage",
+  endpoint = "",
 }: MultipleImageInputProps) {
-  function handleImageRemove(fileIndex: number) {
+  function handleImageRemove(fileIndex: any) {
     const updatedFiles = files.filter((file, index) => index !== fileIndex);
     setFiles(updatedFiles);
   }

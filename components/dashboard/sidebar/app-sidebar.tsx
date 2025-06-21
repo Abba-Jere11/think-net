@@ -1,25 +1,41 @@
 import React from 'react';
   import {
+    ArrowRight,
+    AudioWaveform,
     Archive,
-    
+    BadgeCheck,
     Bell,
     Briefcase,
-    
+    BookOpen,
     BarChart3,
     BarChart2,
-    
+    Bot,
     ChevronRight,
-    
+    ChevronsUpDown,
+    Command,
+    CreditCard,
     DollarSign,
-   
+    Folder,
+    Forward,
+    Frame,
+    GalleryVerticalEnd,
+    LayoutDashboard,
+    LogOut,
+    Map,
+    MoreHorizontal,
     MessageSquare,
-    
+    Package,
+    PieChart,
+    Plus,
     Settings2,
-   
+    ShoppingCart,
+    Sparkles,
+    SquareTerminal,
+    Trash2,
     Truck,
     Users,
   } from "lucide-react";
-  
+  import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
   import {
     Collapsible,
     CollapsibleContent,
@@ -28,24 +44,29 @@ import React from 'react';
 import {
     Sidebar,
     SidebarContent,
-    
+    SidebarFooter,
     SidebarGroup,
-    
+    SidebarGroupLabel,
     SidebarHeader,
-    
+    SidebarInset,
     SidebarMenu,
-   
+    SidebarMenuAction,
     SidebarMenuButton,
     SidebarMenuItem,
     SidebarMenuSub,
     SidebarMenuSubButton,
     SidebarMenuSubItem,
-    
+    SidebarProvider,
     SidebarRail,
-    
+    SidebarTrigger,
   } from "@/components/ui/sidebar";
   import LogoLogin from "@/components/logo-login"
+  const data = {
+   
+   
+    
   
+  };
 
 export default function AppSidebar() {
   

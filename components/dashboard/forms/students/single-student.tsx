@@ -7,12 +7,19 @@ import ImageInput from "@/components/FormInputs/ImageInput";
 import PasswordInput from "@/components/FormInputs/PasswordInput";
 import TextArea from "@/components/FormInputs/TextAreaInput";
 import TextInput from "@/components/FormInputs/TextInput";
-
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import toast from "react-hot-toast";
 
 export type SelectOptionProps = {
   label: string;
@@ -155,6 +162,7 @@ export default function SingleStudent({
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<StaffProps>({
     defaultValues: {

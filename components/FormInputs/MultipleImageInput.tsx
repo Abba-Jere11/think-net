@@ -5,8 +5,8 @@ import React from "react";
 type ImageInputProps = {
   title: string;
   imageUrls: string[];
-  setImageUrls: (urls: string[]) => void;
-  endpoint: "imageUploader" | "staffImage";
+  setImageUrls: any;
+  endpoint: any;
 };
 export default function MultipleImageInput({
   title,

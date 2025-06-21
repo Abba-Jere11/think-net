@@ -7,7 +7,7 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { CircleHelp, } from "lucide-react";
+import { CircleHelp, Mail } from "lucide-react";
 type TextInputProps = {
   register: any;
   errors: any;
